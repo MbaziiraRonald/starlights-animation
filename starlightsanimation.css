@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    background-color: #333;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    width:50px;
+    height: 50px;
+    transform-origin: center;
+    border-radius: 50%; 
+    animation: rotate 1s ease forwards infinite;
+}
+
+.inside {
+     width: 50px;
+     height: 50px;
+     background-color: red;
+     border-radius: 50%;
+     clip-path: circle(15px);
+     align-items: center;
+     position: relative;
+     animation: rotate 1s ease forwards infinite;
+     
+}
+
+.inside:nth-child(1){
+    left: -100px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.inside:nth-child(2){
+    left: 100px;
+    top: -50px;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.inside:nth-child(3) {
+    bottom: -40px;
+    clip-path: circle(5px);
+}
+
+.inside:nth-child(4) {
+    top: -290px;
+    clip-path: circle(5px);
+    
+}
+
+@keyframes rotate {
+    0% {
+        background-color: red; transform:rotate(0deg);
+    }
+    50% {
+        background-color: blue; transform: rotate(0deg);
+    }
+    75% {
+        background-color: yellow; transform: rotate(0deg);
+    }
+    100% {
+        background-color: green; transform: rotate(360deg);  
+    }
+}
+
